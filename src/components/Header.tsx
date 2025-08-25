@@ -1,7 +1,7 @@
 import { Menu, Phone, Mail } from "lucide-react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
-import logoImage from "figma:asset/01c320db4ac67de973751bbb564fc309b6023b7a.png";
+import logoImage from "/logo.png";
 
 export function Header() {
   const navigationItems = [
@@ -42,7 +42,7 @@ export function Header() {
         <div className="hidden lg:flex items-center space-x-4">
           <div className="flex items-center space-x-2 text-sm text-muted-foreground">
             <Phone className="h-4 w-4 text-secondary" />
-            <span>+90 555 123 4567</span>
+            <span>+90 532 797 0203</span>
           </div>
           <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
             Rezervasyon Yap

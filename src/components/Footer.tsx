@@ -1,7 +1,7 @@
 import { MapPin, Phone, Mail, Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
-import logoImage from "figma:asset/01c320db4ac67de973751bbb564fc309b6023b7a.png";
+import logoImage from "/logo.png";
 
 export function Footer() {
   const quickLinks = [
@@ -49,7 +49,7 @@ export function Footer() {
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm">
                 <Phone className="h-4 w-4 text-secondary" />
-                <span>+90 555 123 4567</span>
+                <span>+90 532 797 0203</span>
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <Mail className="h-4 w-4 text-secondary" />
