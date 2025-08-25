@@ -3,70 +3,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/
 import { Badge } from "./ui/badge";
 import { CalendarDays, Clock, ArrowRight, Eye } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { Link } from "react-router-dom";
+import { blogPosts } from "../content/blogPosts";
 
 export function BlogSection() {
-  const blogPosts = [
-    {
-      title: "Bursa'da Görülmesi Gereken 10 Tarihi Yer",
-      excerpt: "Osmanlı'nın ilk başkenti Bursa'nın mutlaka görülmesi gereken tarihi mekanlarını keşfedin. Ulucami'den Yeşil Türbe'ye...",
-      image: "https://images.unsplash.com/photo-1752670451148-50941ab59e57?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvdHRvbWFuJTIwaGlzdG9yaWNhbCUyMGFyY2hpdGVjdHVyZXxlbnwxfHx8fDE3NTYxMDYyMTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      category: "Tarihi Yerler",
-      date: "15 Ocak 2024",
-      readTime: "8 dk",
-      views: "1.2K",
-      featured: true
-    },
-    {
-      title: "Osmanlı'dan Günümüze Bursa Mutfağı",
-      excerpt: "İskender kebabın doğduğu şehirde, geleneksel lezzetlerin hikayesini ve en iyi mekanları öğrenin.",
-      image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0dXJraXNoJTIwZm9vZCUyMGlza2VuZGVyfGVufDF8fHx8MTc1NjEwNjIyN3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      category: "Gastronomi",
-      date: "12 Ocak 2024",
-      readTime: "6 dk",
-      views: "985",
-      featured: false
-    },
-    {
-      title: "Uludağ'da 1 Günlük Gezi Planı",
-      excerpt: "Türkiye'nin en popüler kayak merkezinden doğa yürüyüşlerine kadar Uludağ'da yapılabilecek aktiviteler.",
-      image: "https://images.unsplash.com/photo-1551524164-6cf2ac11654b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3VudGFpbiUyMGNhYmxlJTIwY2FyfGVufDF8fHx8MTc1NjEwNjMwMHww&ixlib=rb-4.1.0&q=80&w=1080",
-      category: "Doğa",
-      date: "10 Ocak 2024",
-      readTime: "5 dk",
-      views: "756",
-      featured: false
-    },
-    {
-      title: "Cumalıkızık: UNESCO Dünya Mirası Köyü",
-      excerpt: "700 yıllık tarihi dokusu ile büyüleyen Cumalıkızık köyünde neler yapılır, nasıl gidilir?",
-      image: "https://images.unsplash.com/photo-1710494803533-9b34ac6ef146?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0dXJraXNoJTIwdHJhZGl0aW9uYWwlMjBob3VzZXMlMjB2aWxsYWdlfGVufDF8fHx8MTc1NjEwNjIxOHww&ixlib=rb-4.1.0&q=80&w=1080",
-      category: "Kültür",
-      date: "8 Ocak 2024", 
-      readTime: "7 dk",
-      views: "1.1K",
-      featured: false
-    },
-    {
-      title: "Bursa Kapalı Çarşı Alışveriş Rehberi",
-      excerpt: "Türkiye'nin en eski kapalı çarşılarından birinde alışveriş yapmanın püf noktaları ve öneriler.",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0dXJraXNoJTIwYmF6YWFyJTIwbWFya2V0fGVufDF8fHx8MTc1NjEwNjMwNXww&ixlib=rb-4.1.0&q=80&w=1080",
-      category: "Alışveriş",
-      date: "5 Ocak 2024",
-      readTime: "4 dk",
-      views: "623",
-      featured: false
-    },
-    {
-      title: "Bursa'da Termal Turizm: Oylat Kaplıcaları",
-      excerpt: "Şifalı sularıyla ünlü Oylat kaplıcalarında dinlence ve sağlık turizminin keyfini çıkarın.",
-      image: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGVybWFsJTIwc3ByaW5nc3xlbnwxfHx8fDE3NTYxMDYzMDl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      category: "Sağlık",
-      date: "3 Ocak 2024",
-      readTime: "6 dk",
-      views: "892",
-      featured: false
-    }
-  ];
+  // İçerik blog yazıları, slug dahil tüm alanları ile ortak içerik modülünden geliyor.
 
   const getCategoryColor = (category: string) => {
     const colors: { [key: string]: string } = {
@@ -139,10 +80,12 @@ export function BlogSection() {
                       </div>
                     </div>
                   </div>
-                  <Button className="w-fit bg-primary hover:bg-primary/90 text-primary-foreground">
-                    Devamını Oku
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
+                  <Link to={`/blog/${featuredPost.slug}`}>
+                    <Button className="w-fit bg-primary hover:bg-primary/90 text-primary-foreground">
+                      Devamını Oku
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </Card>
@@ -193,10 +136,12 @@ export function BlogSection() {
                     </div>
                   </div>
                 </div>
-                <Button variant="outline" size="sm" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                  Oku
-                  <ArrowRight className="ml-2 h-3 w-3" />
-                </Button>
+                <Link to={`/blog/${post.slug}`}>
+                  <Button variant="outline" size="sm" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    Oku
+                    <ArrowRight className="ml-2 h-3 w-3" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}
