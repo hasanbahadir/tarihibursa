@@ -99,7 +99,7 @@ export function GuideSection() {
           <div className="space-y-8">
             <div className="relative">
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1659100939687-a7c10b4d5841?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB0b3VyJTIwZ3VpZGUlMjBwb3J0cmFpdHxlbnwxfHx8fDE3NTYwNzg1MTl8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                src="/HusamettinKaplan.png"
                 alt="Hüsamettin Kaplan - Turizm Rehberi"
                 className="w-full h-96 object-cover rounded-lg shadow-lg"
               />
