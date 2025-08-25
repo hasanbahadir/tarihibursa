@@ -58,7 +58,7 @@ export function GuideSection() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-secondary" />
-                  <span>+90 555 123 4567</span>
+                  <span>+90 532 797 0203</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-secondary" />
@@ -125,7 +125,7 @@ export function GuideSection() {
                     </div>
                     <div>
                       <Label htmlFor="phone">Telefon</Label>
-                      <Input id="phone" placeholder="+90 555 123 4567" />
+                      <Input id="phone" placeholder="+90 532 797 0203" />
                     </div>
                   </div>
                   <div>
